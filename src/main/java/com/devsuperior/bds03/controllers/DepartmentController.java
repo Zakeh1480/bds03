@@ -2,6 +2,7 @@ package com.devsuperior.bds03.controllers;
 
 import java.util.List;
 
+import net.bytebuddy.build.HashCodeAndEqualsPlugin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +21,7 @@ public class DepartmentController {
 	
 	@GetMapping
 	public ResponseEntity<List<DepartmentDTO>> findAll() {
-		List<DepartmentDTO> list = service.findAll();		
+		List<DepartmentDTO> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 }
